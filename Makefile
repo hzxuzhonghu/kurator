@@ -69,6 +69,13 @@ gen-prom: clean install-tools
 	hack/gen-prom.sh ${PROM_OUT_PATH} ${KUBE_PROM_VER} ${KUBE_PROM_CFG_FILE}
 	cp -r ${PROM_OUT_PATH}/manifests/* ${PROM_MANIFESTS_PATH}
 
+.PHONY: gen
+gen: tidy gen-prom
+
+.PHONY: gen-check
+gen-check: tidy gen-prom
+	hack/check_clean_repo.sh
+
 .PHONY: test
 test: clean tidy
 	go test ./...
