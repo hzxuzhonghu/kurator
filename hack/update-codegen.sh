@@ -56,3 +56,12 @@ informer-gen \
   --versioned-clientset-package=${PKG_PATH}/generated/clientset/versioned \
   --listers-package=${PKG_PATH}/generated/listers \
   --output-package=${PKG_PATH}/generated/informers
+
+echo "Generating with openapi-gen"
+openapi-gen \
+  --go-header-file hack/boilerplate.go.txt \
+  --input-dirs=${ALL_APIS} \
+  --input-dirs "k8s.io/apimachinery/pkg/apis/meta/v1,k8s.io/apimachinery/pkg/runtime,k8s.io/apimachinery/pkg/version" \
+  --input-dirs "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1,k8s.io/api/admissionregistration/v1,k8s.io/api/networking/v1" \
+  --output-package=${PKG_PATH}/generated/openapi \
+  -O zz_generated.openapi

@@ -45,3 +45,7 @@ fi
 if ! [ -x "$(command -v informer-gen)" ]; then
     util::install_tools k8s.io/code-generator/cmd/informer-gen v0.25.2
 fi
+
+if ! [ -x "$(command -v openapi-gen)" ]; then
+    util::install_tools k8s.io/code-generator/cmd/openapi-gen v0.25.2
+fi

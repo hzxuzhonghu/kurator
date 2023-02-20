@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 // Package v1alpha1 contains API Schema definitions for the infra v1alpha1 API group
+// +k8s:openapi-gen=true
 // +kubebuilder:object:generate=true
 // +groupName=infra.kurator.dev
 // +k8s:deepcopy-gen=package

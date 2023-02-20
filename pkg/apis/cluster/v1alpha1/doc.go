@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 // Package v1alpha1 contains API Schema definitions for the cluster v1alpha1 API group
+// +k8s:openapi-gen=true
 // +kubebuilder:object:generate=true
 // +groupName=cluster.kurator.dev
 // +k8s:deepcopy-gen=package

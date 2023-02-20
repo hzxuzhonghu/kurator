@@ -40,7 +40,7 @@ type Cluster struct {
 	Status            ClusterStatus `json:"status,omitempty"`
 }
 
-// ClusterSpect defines the desired state of Cluster
+// ClusterSpec defines the desired state of Cluster
 type ClusterSpec struct {
 	// InfraType is the infra type of the cluster.
 	InfraType ClusterInfraType `json:"infraType"`
