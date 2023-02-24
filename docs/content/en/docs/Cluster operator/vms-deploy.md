@@ -25,7 +25,7 @@ $ kubectl get pod -A | grep kurator-cluster-operator
 kurator-system       kurator-cluster-operator-857cf45445-lkwsw               1/1     Running             0          17s
 ```
 
-### Installs an SSH key for your VMs
+### Install an SSH key on your VMs
 
 Assuming the public IP address of the VMs where you want to install K8s is "200.x.x.1" and "200.x.x.2".
 The private IP address is "192.x.x.1" and "192.x.x.2".
@@ -40,16 +40,16 @@ ssh-keygen
 
 You need follow prompts to "Enter file in which to save the key" and "Enter passphrase".
 
-#### Installs an authorized key
+#### Install SSH public key
 
 ```console
-ssh-copy-id 200.x.x.1 
-ssh-copy-id 200.x.x.2
+ssh-copy-id [user@]200.x.x.1
+ssh-copy-id [user@]200.x.x.2
 ```
 
 #### Check your access
 
-Then you can get access without requiring a password for each login.
+Try logging into the VMs with a password for each login.
 
 ```console
 ssh 200.x.x.1 
@@ -62,11 +62,12 @@ Now you can easily log in VMs, but you still need to pass this ability to Kurato
 
 #### Create the secret with kubectl
 
+Create a secret used to install kubernetes cluster on your VMs via ssh.
+
 ```console
 kubectl create secret generic cluster-secret --from-file=ssh-privatekey=/root/.ssh/id_rsa
 ```
 
-"secret/cluster-secret created" will appear.
 
 #### Check the secret
 
@@ -84,14 +85,13 @@ Type:  Opaque
 Data
 ====
 ssh-privatekey:  2590 bytes
-ssh-publickey:   565 bytes
 ```
 
-### Configure your resources
+### Customize your cluster configuration
 
-You can find resources examples from the path "manifests/examples/customcluster/" in Kurator Repository.
+You can find custom cluster examples [here](https://github.com/kurator-dev/kurator/tree/main/manifests/examples/customcluster).
 
-Here are the four types of resources needed for VMs cluster management：
+Here are the four types of resources needed for VMs cluster provision：
 
 - cluster
 - kcp(KubeadmControlPlane)
