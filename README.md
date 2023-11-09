@@ -1,4 +1,6 @@
 # Kurator
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fhzxuzhonghu%2Fkurator.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fhzxuzhonghu%2Fkurator?ref=badge_shield)
+
 
 ## Overview
 
@@ -53,3 +55,6 @@ details on submitting patches and the contribution workflow.
 ## License
 
 Kurator is under the Apache 2.0 license. See the [LICENSE](LICENSE) file for details.
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fhzxuzhonghu%2Fkurator.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fhzxuzhonghu%2Fkurator?ref=badge_large)
